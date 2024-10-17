@@ -14,14 +14,32 @@ class _NoteCardState extends State<NoteCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: const EdgeInsets.all(16),
+      margin: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Theme.of(context).primaryColor,
+        borderRadius: const BorderRadius.all(Radius.circular(20)),
+      ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(notesList[widget.index].title),
+          Text(
+            notesList[widget.index].title,
+            style: const TextStyle(color: Colors.white),
+          ),
           notesList[widget.index].isFinished
-              ? IconButton(onPressed: () {}, icon: const Icon(Icons.circle))
+              ? IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.circle,
+                    color: Colors.white,
+                  ))
               : IconButton(
-                  onPressed: () {}, icon: const Icon(Icons.circle_outlined))
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.circle_outlined,
+                    color: Colors.white,
+                  ))
         ],
       ),
     );
